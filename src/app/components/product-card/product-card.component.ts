@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,5 +12,9 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class ProductCardComponent {
   @Input() product : any; // for getting data from parent
-
+  @Output() viewProduct = new EventEmitter<string>();// for sending data to parent
+  view (){
+    console.log("View")
+    this.viewProduct.emit(this.product.id)
+  }
  }
