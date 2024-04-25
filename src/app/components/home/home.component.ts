@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
+import { SearchComponent } from '../search/search.component';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ProductCardComponent],
+  imports: [ProductCardComponent,SearchComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -56,4 +58,8 @@ export class HomeComponent {
     name: "Men Solid Round Neck Polyester Light Blue T-Shirt"
    },
    ];
+
+    onViewProduct(event:any){
+    console.log("onViewProduct",event)
+   }
 }
