@@ -68,7 +68,7 @@ export class HomeComponent {
    onSearch(search : string){
     console.log(search);
     if(search){
-      this.filteredProduct = this.products.filter((x => x.name.includes(search)));
+      this.filteredProduct = this.products.filter((x => x.brand.includes(search)));
     }else{
       this.filteredProduct = this.products;
     }
