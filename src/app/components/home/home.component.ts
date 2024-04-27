@@ -58,8 +58,19 @@ export class HomeComponent {
     name: "Men Solid Round Neck Polyester Light Blue T-Shirt"
    },
    ];
-
+    filteredProduct:any[]=[];
+    ngOnInit(){
+      this.filteredProduct = this.products;
+    }
     onViewProduct(event:any){
     console.log("onViewProduct",event)
+   }
+   onSearch(search : string){
+    console.log(search);
+    if(search){
+      this.filteredProduct = this.products.filter((x => x.name.includes(search)));
+    }else{
+      this.filteredProduct = this.products;
+    }
    }
 }

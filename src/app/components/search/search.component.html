@@ -1,6 +1,6 @@
 <div class="flex gap-4 items-center">
-    <mat-form-field subscriptSizing="dynamic" appearance="outline" class="w-[520px] mb-4">
-      <input matInput placeholder="Search" (change)="onChange($event)">
+    <mat-form-field subscriptSizing="dynamic" class="w-[520px] mb-4">
+      <input matInput placeholder="Search" (keypress)="onTyping($event)" (change)="inputChange($event)">
     </mat-form-field>
     <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
   </div>

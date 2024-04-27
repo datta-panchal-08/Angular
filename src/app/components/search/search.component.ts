@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 
@@ -11,10 +11,20 @@ import {MatInputModule} from '@angular/material/input';
   styleUrl: './search.component.scss'
 })
 export class SearchComponent {
+  @Output() search= new EventEmitter<string>();
   onSearch(){
     console.log("hello from search component")
+    this.search.emit(this.text)
   }
-  onChange(event : any){
-    console.log("Changing",event.target.value)
+  text = "";
+
+  inputChange(event : any){
+    console.log(event.target.value)
+    this.text = event.target.value;
+  }
+  onTyping(event : any)
+  {
+    console.log("OnTyping Called", event.target.value);
+    
   }
 }
